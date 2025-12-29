@@ -28,7 +28,11 @@
       "golang.go"
       "pkief.material-icon-theme"
       "esbenp.prettier-vscode"
-      "esbenp.foxundermoon.shell-format"
+      "foxundermoon.shell-format"
+      "denoland.vscode-deno"
+      "anthropic.claude-code"
+      "redhat.vscode-yaml"
+      "tamasfe.even-better-toml"
     ];
     # Enable previews
     previews = {
@@ -53,7 +57,8 @@
         # Example: install JS dependencies from NPM
         # npm-install = "npm install";
         # Open editors for the following files by default, if they exist:
-        python-venv = "python -m venv .venv";
+        # python-venv = "python -m venv .venv";
+        init = "bash init.sh";
         default.openFiles = [ "README.md" ];
       };
       # Runs when the workspace is (re)started
@@ -67,6 +72,9 @@
     enable = true;
   };
   services.mongodb = {
+    enable = true;
+  };  
+  services.postgres = {
     enable = true;
   };
   services.redis = {
