@@ -1,6 +1,9 @@
 #!/bin/bash
 
 mkdir ~/bin
+
+curl https://rclone.org/install.sh | bash
+
 curl -fsSL https://deno.land/install.sh | bash
 export PATH="~/.deno/bin:$PATH"
 deno install -gArf jsr:@deno/deployctl
@@ -17,4 +20,6 @@ npm install @anthropic-ai/claude-code -g
 
 python -m venv .venv
 
-echo 'export PATH=~/bin:$PATH' >>~/.zshrc
+echo 'export PATH=~/bin:$PATH' >>~/.bashrc
+
+rm -f init.sh LICENSE

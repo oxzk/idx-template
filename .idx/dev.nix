@@ -32,7 +32,9 @@
       "denoland.vscode-deno"
       "anthropic.claude-code"
       "redhat.vscode-yaml"
-      "tamasfe.even-better-toml"
+      "bungcip.better-toml"
+      # "k--kato.intellij-idea-keybindings"
+      "vue.volar"
     ];
     # Enable previews
     previews = {
