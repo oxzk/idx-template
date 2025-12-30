@@ -11,8 +11,6 @@
     cp -r ${./.idx}/. "$out/.idx/"
     cp -r ${./.vscode}/. "$out/.vscode"
     cp -r ${./.bin}/. "$out/.bin"
-    npm install wrangler -g
-    npm install @anthropic-ai/claude-code -g
     echo 'export PATH="$HOME/$out/.bin:$PATH"' >> ~/.bashrc
     chmod -R u+w "$out"
     rm -rf "$out/.git"
