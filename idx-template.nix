@@ -12,7 +12,6 @@
     cd "$out"
 
     python -m venv .venv
-    deno install -gArf jsr:@deno/deployctl
     npm install esa-cli -g
     npm install edgeone -g
     npm install wrangler -g
