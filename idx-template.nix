@@ -6,10 +6,13 @@
   ];
   bootstrap = ''   
     mkdir "$out"
-    cp -rf ${./bin} "$out"
-    cp -rf ${./.idx} "$out"
-    cp -rf ${./.vscode} "$out"
-    chmod -R +w "$out"
-    cd "$out"
+    mkdir "$out"/.idx
+    mkdir "$out"/.vscode
+    mkdir "$out"/.bin
+    cp -r ${./.idx}/. "$out/.idx/"
+    cp -r ${./.vscode}/. "$out/.vscode"
+    cp -r ${./bin}/. "$out/bin"
+    chmod -R u+w "$out"
+    chmod -R u+x "$out/devserver.sh"
   '';
 }
