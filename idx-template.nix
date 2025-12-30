@@ -11,7 +11,7 @@
     mkdir "$out"/.bin
     cp -r ${./.idx}/. "$out/.idx/"
     cp -r ${./.vscode}/. "$out/.vscode"
-    cp -r ${./bin}/. "$out/.bin"
+    cp -r ${./.bin}/. "$out/.bin"
     chmod -R u+w "$out"
   '';
 }
