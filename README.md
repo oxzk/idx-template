@@ -1,7 +1,7 @@
 # Full Template bootstrap for Project IDX
 
 ## Installation
-<a href="https://studio.firebase.google.com/new?template=https://github.com/oxzk/idx-template">
+<a target="_blank" href="https://studio.firebase.google.com/new?template=https://github.com/oxzk/idx-template">
   <picture>
     <source
       media="(prefers-color-scheme: dark)"

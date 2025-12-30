@@ -1,11 +1,11 @@
 { pkgs, ... }: {
   packages = [
-    pkgs.nodejs_22
+    pkgs.nodejs_20
     pkgs.python314
   ];
   bootstrap = ''   
     mkdir "$WS_NAME"
-    cp -rf . "$WS_NAME"
+    cp -r ${./.}/* "$WS_NAME"
     chmod -R +w "$WS_NAME"
     mv "$WS_NAME" "$out"
     cd "$out"
