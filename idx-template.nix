@@ -13,6 +13,5 @@
     cp -r ${./.vscode}/. "$out/.vscode"
     cp -r ${./bin}/. "$out/.bin"
     chmod -R u+w "$out"
-    chmod -R u+x "$out/devserver.sh"
   '';
 }
