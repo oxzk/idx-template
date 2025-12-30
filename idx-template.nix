@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   packages = [
     pkgs.nodejs_20
-    pkgs.python314
+    pkgs.python311
   ];
   bootstrap = ''   
     mkdir "$WS_NAME"

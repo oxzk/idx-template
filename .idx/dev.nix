@@ -6,9 +6,9 @@
   # Use https://search.nixos.org/packages to find packages
   packages = [
     pkgs.go
-    pkgs.python314
+    pkgs.python311
     # pkgs.python311Packages.pip
-    pkgs.nodejs_22
+    pkgs.nodejs_20
     pkgs.openssh
     pkgs.deno
     # pkgs.docker
