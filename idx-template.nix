@@ -12,10 +12,5 @@
     cd "$out"
 
     python -m venv .venv
-    npm install esa-cli -g
-    npm install edgeone -g
-    npm install wrangler -g
-    npm install @anthropic-ai/claude-code -g
-    echo 'export PATH=~/bin:$PATH' >>~/.bashrc
   '';
 }
