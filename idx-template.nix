@@ -5,12 +5,11 @@
     pkgs.deno
   ];
   bootstrap = ''   
-    mkdir "$WS_NAME"
-    cp -rf ${./bin} "$WS_NAME"
-    cp -rf ${./.idx} "$WS_NAME"
-    cp -rf ${./.vscode} "$WS_NAME"
-    chmod -R +w "$WS_NAME"
-    mv "$WS_NAME" "$out"
+    mkdir "$out"
+    cp -rf ${./bin} "$out"
+    cp -rf ${./.idx} "$out"
+    cp -rf ${./.vscode} "$out"
+    chmod -R +w "$out"
     cd "$out"
   '';
 }
