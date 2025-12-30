@@ -2,6 +2,7 @@
   packages = [
     pkgs.nodejs_20
     pkgs.python311
+    pkgs.deno
   ];
   bootstrap = ''   
     mkdir "$WS_NAME"
