@@ -6,16 +6,19 @@
   # Use https://search.nixos.org/packages to find packages
   packages = [
     pkgs.go
-    pkgs.python311
+    pkgs.python314
     # pkgs.python311Packages.pip
-    pkgs.nodejs_20
+    pkgs.nodejs_22
     pkgs.openssh
+    pkgs.deno
     # pkgs.docker
     # pkgs.docker-compose
     # pkgs.nodePackages.nodemon
   ];
   # Sets environment variables in the workspace
   env = {
+    PORT = "9002";
+    HOST = "0.0.0.0";
   };
   idx = {
     # Search for the extensions you want on https://open-vsx.org/ and use "publisher.id"
@@ -60,7 +63,7 @@
         # npm-install = "npm install";
         # Open editors for the following files by default, if they exist:
         # python-venv = "python -m venv .venv";
-        init = "bash init.sh";
+        # init = "bash init.sh";
         default.openFiles = [ "README.md" ];
       };
       # Runs when the workspace is (re)started
@@ -75,7 +78,7 @@
   };
   services.mongodb = {
     enable = true;
-  };  
+  };
   services.postgres = {
     enable = true;
   };
