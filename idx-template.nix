@@ -6,7 +6,7 @@
   ];
   bootstrap = ''   
     mkdir "$WS_NAME"
-    cp -r ${./.}/* "$WS_NAME"
+    cp -a . "$WS_NAME"
     chmod -R +w "$WS_NAME"
     mv "$WS_NAME" "$out"
     cd "$out"
