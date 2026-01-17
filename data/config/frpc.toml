@@ -1,8 +1,10 @@
-serverAddr = "gm.rainplay.cn"
-serverPort = 32838
+serverAddr = "47.99.92.117"
+serverPort = 7000
+user = ""
 
-auth.method = "token"
-auth.token = ""
+# 认证配置
+auth.token = "ChmlFrpToken"
+
 
 # 日志配置
 log.to = "./frpc.log"
@@ -15,11 +17,11 @@ name = "google_ssh"
 type = "tcp"
 localIP = "debian"
 localPort = 22
-remotePort = 32839
+remotePort = 35924
 
 [[proxies]]
 name = "google_ss"
 type = "tcp"
 localIP = "ss"
 localPort = 9010
-remotePort = 32839
+remotePort = 33259
