@@ -14,6 +14,9 @@
     pkgs.gcc
     pkgs.cmake
     pkgs.rustup
+    pkgs.cloudflared
+    pkgs.openssl
+    pkgs.sing-box
   ];
   # Sets environment variables in the workspace
   env = {
@@ -38,6 +41,7 @@
       "anthropic.claude-code"
       "redhat.vscode-yaml"
       "bungcip.better-toml"
+      "rust-lang.rust-analyzer"
       # "k--kato.intellij-idea-keybindings"
       "vue.volar"
     ];
