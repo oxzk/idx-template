@@ -26,6 +26,7 @@ npm install @anthropic-ai/claude-code -g
 
 python -m venv .venv
 
+echo 'export PATH=~/.deno/bin:$PATH' >>~/.bashrc
 echo 'export PATH=~/bin:$PATH' >>~/.bashrc
 
 cat > README.md <<'EOF'
