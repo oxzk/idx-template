@@ -1,0 +1,64 @@
+services:
+  # ss:
+  #   image: teddysun/shadowsocks-libev
+  #   container_name: ss
+  #   restart: unless-stopped
+  #   volumes:
+  #     - ./data/config/ss.json:/etc/shadowsocks-libev/config.json
+
+  # debian:
+  #   image: oxzk/debian:ssh
+  #   container_name: debian
+  #   hostname: debian
+  #   volumes:
+  #     - ./data/debian:/data
+  #   tty: true
+  #   restart: unless-stopped
+  #   command: >
+  #     bash -c "echo root:${SSH_PASSWORD} | chpasswd &&
+  #     service ssh start &&
+  #     tail -f /dev/null"
+
+  # frpc:
+  #   image: fatedier/frpc:v0.65.0
+  #   container_name: frpc
+  #   restart: unless-stopped
+  #   volumes:
+  #     - ./data/config/frpc.toml:/etc/frp/frpc.toml
+  #     - ./data/logs:/var/log
+  #   command: ["-c", "/etc/frp/frpc.toml"]
+  #   depends_on:
+  #     - debian
+
+  firefox:
+    image: jlesage/firefox:latest
+    container_name: firefox
+    ports:
+      - "5800:5800" 
+    volumes:
+      - ./data/firefox:/config
+    environment:
+      - TZ=Asia/Shanghai
+      - VNC_PASSWORD=admin001
+      - KEEP_APP_RUNNING=1
+      - START_IN_FULLSCREEN=1
+      - ENABLE_CJK_FONT=1
+    restart: unless-stopped
+
+  # cloudflared:
+  #   image: cloudflare/cloudflared:latest
+  #   container_name: cloudflared
+  #   restart: unless-stopped
+  #   command: >
+  #     tunnel
+  #     --edge-ip-version auto
+  #     --protocol http2
+  #     --no-autoupdate
+  #     --logfile /var/log/cloudflared.log
+  #     --loglevel info
+  #     run --token ${CLOUDFLARE_TUNNEL_TOKEN}
+  #   volumes:
+  #     - ./data/logs:/var/log
+  #   depends_on:
+  #     - debian
+

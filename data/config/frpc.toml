@@ -1,0 +1,27 @@
+serverAddr = "47.99.92.117"
+serverPort = 7000
+user = ""
+
+# 认证配置
+auth.token = "ChmlFrpToken"
+
+
+# 日志配置
+log.to = "./frpc.log"
+log.level = "info"
+log.maxDays = 3
+
+# ssh
+[[proxies]]
+name = "google_ssh"
+type = "tcp"
+localIP = "debian"
+localPort = 22
+remotePort = 35924
+
+[[proxies]]
+name = "google_ss"
+type = "tcp"
+localIP = "ss"
+localPort = 9010
+remotePort = 33259
