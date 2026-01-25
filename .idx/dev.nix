@@ -93,6 +93,7 @@
   };
   services.postgres = {
     enable = true;
+    enableTcp = true;
   };
   services.redis = {
     enable = true;
