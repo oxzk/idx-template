@@ -8,6 +8,7 @@
     cp -r ${./data}/. "$out/data/"
     cp ${./docker-compose.yml} "$out/docker-compose.yml"
     cp ${./init.sh} "$out/init.sh"
+    cp ${./start.sh} "$out/start.sh"
     chmod -R u+w "$out"
   '';
 }

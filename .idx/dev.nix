@@ -24,6 +24,7 @@
     HOST = "0.0.0.0";
     SSH_PASSWORD = "admin001";
     CLOUDFLARE_TUNNEL_TOKEN = "";
+    POSTGRESQL_CONN_STRING = "postgresql://user:pg123456@localhost:5432/postgres?sslmode=disable";
   };
   idx = {
     # Search for the extensions you want on https://open-vsx.org/ and use "publisher.id"
@@ -44,6 +45,10 @@
       "rust-lang.rust-analyzer"
       # "k--kato.intellij-idea-keybindings"
       "vue.volar"
+      "mongodb.mongodb-vscode"
+      "mtxr.sqltools"
+      "mtxr.sqltools-driver-pg"
+      "mtxr.sqltools-driver-mysql"
     ];
     # Enable previews
     previews = {
@@ -75,8 +80,7 @@
       # Runs when the workspace is (re)started
       onStart = {
         # Example: start a background task to watch and re-build backend code
-        python-active = "source .venv/bin/activate";
-        docker-start = "docker compose down && docker system prune -a --volumes -f && docker compose up -d";
+        workspace-start = "bash start.sh";
       };
     };
   };
@@ -85,12 +89,14 @@
   };
   services.mongodb = {
     enable = true;
+    port = 27017;
   };
   services.postgres = {
     enable = true;
   };
   services.redis = {
     enable = true;
+    port = 6379;
   };
   services.mysql = {
     enable = true;
